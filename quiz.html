@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>化け狐式音楽理論｜コード聴音クイズ</title>
+  <style>
+    :root{--ink:#162126;--muted:#637077;--paper:#f6f4ef;--surface:#fff;--line:#d7d7d1;--red:#e24635;--teal:#087f77;--yellow:#f1b72c;--nav:#142329}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.7;letter-spacing:0}.topbar{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100vw - 820px)/2));color:#fff;background:var(--nav);border-bottom:3px solid var(--red)}.topbar a{color:#dce6e8;text-decoration:none;font-size:12px}.brand{font-size:14px;font-weight:800}main{max-width:820px;margin:auto;padding:38px 20px 64px}.eyebrow{margin:0 0 6px;color:var(--red);font-size:12px;font-weight:800}h1{margin:0;font-size:clamp(29px,6vw,46px);line-height:1.25}header>p:last-child{max-width:650px;color:var(--muted)}.toolbar{display:flex;gap:12px;align-items:end;margin:28px 0 14px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:8px}.field{display:grid;gap:5px}.field label{font-size:11px;font-weight:800}.field select{padding:9px 30px 9px 10px;border:1px solid var(--line);border-radius:5px;background:#fff;font:inherit}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-left:auto;border-left:1px solid var(--line)}.stat{min-width:74px;text-align:center}.stat strong{display:block;font:800 19px Consolas,monospace}.stat span{font-size:10px;color:var(--muted)}.quiz{padding:26px;background:#fff;border:1px solid var(--line);border-radius:8px}.progress{height:5px;margin:-26px -26px 24px;background:#e9e9e4}.progress span{display:block;width:0;height:100%;background:var(--teal);transition:width .25s}.question-no{color:var(--muted);font:800 11px Consolas,monospace}.prompt{margin:7px 0 20px;font-size:21px;font-weight:800}.listen-row{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}button{min-height:42px;padding:9px 16px;border:1px solid var(--line);border-radius:6px;color:var(--ink);background:#fff;cursor:pointer;font:800 13px inherit}button:hover{border-color:var(--teal)}.listen{color:#fff;background:var(--teal);border-color:var(--teal)}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{min-height:66px;text-align:left;padding:12px 15px}.choice code{display:block;margin-bottom:2px;color:var(--red);font:800 17px Consolas,monospace}.choice small{color:var(--muted)}.choice.correct{color:#fff;background:var(--teal);border-color:var(--teal)}.choice.correct code,.choice.correct small{color:#fff}.choice.wrong{background:#fbe9e5;border-color:var(--red)}.choice:disabled{cursor:default}.feedback{display:none;margin-top:20px;padding:16px;border-left:4px solid var(--yellow);background:#fff8e5}.feedback.show{display:block}.feedback h2{margin:0 0 4px;font-size:17px}.feedback p{margin:3px 0;color:var(--muted);font-size:13px}.next{display:none;margin-top:14px;color:#fff;background:var(--red);border-color:var(--red)}.next.show{display:inline-block}.start-cover{display:grid;place-items:center;min-height:350px;text-align:center}.start-cover button{color:#fff;background:var(--red);border-color:var(--red);font-size:15px}.result{text-align:center;padding:40px 10px}.result strong{display:block;color:var(--red);font:800 54px Consolas,monospace}@media(max-width:620px){.toolbar{align-items:stretch;flex-direction:column}.stats{margin-left:0;border-left:0;border-top:1px solid var(--line);padding-top:10px}.choices{grid-template-columns:1fr}.quiz{padding:20px}.progress{margin:-20px -20px 20px}}
+    :root{--ink:#181817;--muted:#66625b;--paper:#fbfaf6;--surface:#fff;--line:#dfdbd1;--red:#ed9200;--red-soft:#fff0d3;--teal:#20201e;--yellow:#ffd400;--nav:#191918}
+    .topbar{position:sticky;top:0;z-index:20;padding:0 max(18px,calc((100vw - 1040px)/2));color:#fff;background:rgba(17,17,16,.97);border-bottom:4px solid var(--yellow);box-shadow:0 5px 20px rgba(0,0,0,.24);backdrop-filter:blur(12px)}
+    .brand{display:flex;align-items:center;color:#fff;text-decoration:none}.brand img{width:86px;height:auto;display:block}.download-links{display:flex;align-items:center;gap:8px}
+    .topbar .download-link{padding:7px 15px;color:var(--ink);background:var(--yellow);border:2px solid var(--yellow);border-radius:5px;text-decoration:none;font-size:12px;font-weight:900;transition:color .15s,background .15s,border-color .15s}.topbar .download-link:hover{color:#fff;background:var(--red);border-color:var(--red)}.topbar .download-link.script{color:#fff;background:transparent;border-color:#fff}.topbar .download-link.script:hover{color:var(--ink);background:#fff;border-color:#fff}
+    main>header h1{color:var(--ink)}main>header>p:last-child{color:var(--muted)}.eyebrow{color:var(--red)}
+    .guide-back{margin:0 0 22px}.guide-back a{color:var(--ink);font-size:12px;font-weight:800;text-decoration:none}.guide-back a:hover{color:#9a5e00}
+    .toolbar,.quiz{box-shadow:0 8px 24px rgba(24,24,23,.035)}.choice.wrong{background:var(--red-soft)}
+    .listen-row button{flex:1;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;min-height:48px;padding:10px 14px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:none}.listen-row button:hover{color:var(--ink);background:#f3f3f0;border-color:var(--line)}.listen-row button span{min-width:0;text-align:left;overflow-wrap:anywhere;font-weight:800}.listen-row button strong{white-space:nowrap;font-size:12px}.listen-row button.stop{color:var(--ink);background:var(--yellow);border-color:var(--yellow)}
+    footer{display:grid;place-items:center;gap:7px;padding:28px 22px;color:#aaa69e;background:#111110;border-top:4px solid var(--yellow);text-align:center;font-size:11px}footer img{width:74px;height:auto;display:block}
+    @media(max-width:480px){.brand img{width:72px}.download-links{gap:5px}.topbar .download-link{padding:6px 9px;font-size:10px}}
+  </style>
+  <link rel="stylesheet" href="assets/topbar.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="index.html" aria-label="化け狐式音楽理論へ"><img class="brand-logo" src="assets/bakegitsune-logo.png" alt="化け狐"></a><nav class="download-links" aria-label="サイトメニュー"><a class="download-link page" href="index.html"><span class="full-label">理論ガイド</span><span class="short-label">理論</span></a><a class="download-link page" href="quiz.html" aria-current="page"><span class="full-label">クイズ</span><span class="short-label">クイズ</span></a><a class="download-link vst" href="https://booth.pm/ja/items/8132891" target="_blank" rel="noopener noreferrer"><span class="full-label">VST入手</span><span class="short-label">VST</span></a></nav></header>
+  <main>
+    <p class="guide-back"><a href="index.html">← 音楽理論ガイドへ戻る</a></p>
+    <header><p class="eyebrow">LISTEN / COMPARE / REMEMBER</p><h1>音を聴いて答える<br>コード聴音クイズ</h1><p>コードを聴き、響きに合う表記を選びます。ルートは毎問変わります。最初はアルペジオも併用し、構成音の距離を耳で確かめてください。</p></header>
+    <div class="toolbar">
+      <div class="field"><label for="level">出題レベル</label><select id="level"><option value="basic">基本</option><option value="seventh">7thまで</option><option value="color">テンション</option><option value="all">すべて</option></select></div>
+      <div class="stats"><div class="stat"><strong id="score">0</strong><span>正解</span></div><div class="stat"><strong id="streak">0</strong><span>連続</span></div><div class="stat"><strong id="rate">--</strong><span>正答率</span></div></div>
+    </div>
+    <section class="quiz" id="quiz"><div class="start-cover"><div><p>音声を有効にして10問スタート</p><button id="start">▶ クイズを始める</button></div></div></section>
+  </main>
+  <footer><img src="assets/bakegitsune-logo.png" alt="化け狐"><span>© 2026 BakegitsuneVST</span></footer>
+  <script>
+    const bank=[
+      {id:'major',symbol:'無印',name:'メジャー',iv:[0,4,7],mood:'明るく安定した、基準になる響き。',level:'basic'},
+      {id:'minor',symbol:'-',name:'マイナー',iv:[0,3,7],mood:'落ち着いた暗さと内省的な響き。',level:'basic'},
+      {id:'sus2',symbol:'sus2',name:'サス・ツー',iv:[0,2,7],mood:'中性的で風通しのよい透明な響き。',level:'basic'},
+      {id:'sus4',symbol:'sus4',name:'サス・フォー',iv:[0,5,7],mood:'宙に浮き、解決を待つ期待感のある響き。',level:'basic'},
+      {id:'maj7',symbol:'△7',name:'メジャー・セブンス',iv:[0,4,7,11],mood:'澄んだ都会的な明るさと長い余韻。',level:'seventh'},
+      {id:'min7',symbol:'-7',name:'マイナー・セブンス',iv:[0,3,7,10],mood:'柔らかくクールで、角の取れた暗さ。',level:'seventh'},
+      {id:'dom7',symbol:'7',name:'ドミナント・セブンス',iv:[0,4,7,10],mood:'次へ進みたがる、ブルージーな緊張感。',level:'seventh'},
+      {id:'dim7',symbol:'dim7',name:'ディミニッシュ・セブンス',iv:[0,3,6,9],mood:'切迫し、どこへでも動けそうな不安定さ。',level:'seventh'},
+      {id:'add9',symbol:'add9',name:'アド・ナインス',iv:[0,4,7,14],mood:'安定した明るさに爽やかな透明感を追加。',level:'color'},
+      {id:'maj9',symbol:'△9',name:'メジャー・ナインス',iv:[0,4,7,11,14],mood:'メジャー7thの澄んだ明るさに、9度の透明な広がりを追加。',level:'color'},
+      {id:'madd9',symbol:'-add9',name:'マイナー・アド・ナインス',iv:[0,3,7,14],mood:'繊細で切ない、広がりのある暗い響き。',level:'color'},
+      {id:'six',symbol:'6',name:'シックス',iv:[0,4,7,9],mood:'素朴で温かく、少し懐かしい明るさ。',level:'color'},
+      {id:'nine',symbol:'9',name:'ナインス',iv:[0,4,7,10,14],mood:'ファンキーで厚みのある、洗練された緊張。',level:'color'},
+      {id:'sharp11',symbol:'△7(11#)',name:'メジャー・セブンス・シャープ11',iv:[0,4,7,11,18],mood:'明るく浮遊する幻想的なリディアンの色彩。',level:'all'},
+      {id:'flat9',symbol:'7(-9)',name:'セブンス・フラット9',iv:[0,4,7,10,13],mood:'半音の摩擦が強い、暗く劇的な緊張。',level:'all'},
+      {id:'sharp5',symbol:'△7(5#)',name:'メジャー・セブンス・シャープ5',iv:[0,4,8,11],mood:'夢幻的で上へ押し上げられる不思議な響き。',level:'all'}
+    ];
+    const ranks={basic:0,seventh:1,color:2,all:3};
+    const quiz=document.getElementById('quiz'),level=document.getElementById('level');
+    let ctx,current,choices=[],question=0,score=0,streak=0,answered=0,lastId='';
+
+    function pool(){const rank=ranks[level.value];return bank.filter(x=>ranks[x.level]<=rank)}
+    function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+    function frequency(midi){return 440*Math.pow(2,(midi-69)/12)}
+    function play(arpeggio=false){
+      ctx ||= new (window.AudioContext||window.webkitAudioContext)();ctx.resume();
+      const root=48+current.root;
+      current.item.iv.forEach((interval,i)=>{
+        const start=ctx.currentTime+.04+(arpeggio?i*.15:0),duration=arpeggio?1.25:1.45;
+        const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=i?'sine':'triangle';osc.frequency.value=frequency(root+interval);
+        gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(.13/Math.sqrt(current.item.iv.length),start+.025);gain.gain.exponentialRampToValueAtTime(.0001,start+duration);
+        osc.connect(gain).connect(ctx.destination);osc.start(start);osc.stop(start+duration+.02);
+      });
+    }
+    function updateStats(){document.getElementById('score').textContent=score;document.getElementById('streak').textContent=streak;document.getElementById('rate').textContent=answered?Math.round(score/answered*100)+'%':'--'}
+    function nextQuestion(){
+      if(question>=10){quiz.innerHTML=`<div class="result"><span>RESULT</span><strong>${score} / 10</strong><p>正答率 ${Math.round(score/10*100)}%</p><button onclick="location.reload()">もう一度挑戦</button></div>`;return}
+      let candidates=pool(),item;do{item=candidates[Math.floor(Math.random()*candidates.length)]}while(candidates.length>1&&item.id===lastId);lastId=item.id;
+      current={item,root:Math.floor(Math.random()*12)};choices=shuffle([item,...shuffle(candidates.filter(x=>x.id!==item.id)).slice(0,3)]);
+      quiz.innerHTML=`<div class="progress"><span style="width:${question*10}%"></span></div><div class="question-no">QUESTION ${question+1} / 10</div><div class="prompt">このコードの響きは？</div><div class="listen-row"><button class="listen" id="listen"><span>コード</span><strong>▶ 再生</strong></button><button id="arp"><span>アルペジオ</span><strong>▶ 再生</strong></button></div><div class="choices">${choices.map(x=>`<button class="choice" data-id="${x.id}"><code>${x.symbol}</code><small>${x.name}</small></button>`).join('')}</div><div class="feedback" id="feedback"></div><button class="next" id="next">次の問題 →</button>`;
+      document.getElementById('listen').onclick=()=>play(false);document.getElementById('arp').onclick=()=>play(true);document.querySelectorAll('.choice').forEach(b=>b.onclick=()=>answer(b));document.getElementById('next').onclick=()=>{question++;nextQuestion()};setTimeout(()=>play(false),180);
+    }
+    function answer(button){
+      if(button.disabled)return;const picked=button.dataset.id,isCorrect=picked===current.item.id;answered++;if(isCorrect){score++;streak++}else streak=0;updateStats();
+      document.querySelectorAll('.choice').forEach(b=>{b.disabled=true;if(b.dataset.id===current.item.id)b.classList.add('correct');else if(b===button)b.classList.add('wrong')});
+      const notes=current.item.iv.map(n=>n%12).join('・');const f=document.getElementById('feedback');f.classList.add('show');f.innerHTML=`<h2>${isCorrect?'正解':'不正解'}：${current.item.symbol}</h2><p><strong>${current.item.name}</strong> — ${current.item.mood}</p><p>ルートからの半音距離：${notes}</p>`;document.getElementById('next').classList.add('show');
+    }
+    document.getElementById('start').onclick=()=>{question=score=streak=answered=0;updateStats();nextQuestion()};
+    level.onchange=()=>{if(question||answered){question=score=streak=answered=0;updateStats();nextQuestion()}};
+  </script>
+</body>
+</html>
